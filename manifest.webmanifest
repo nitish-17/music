@@ -1,0 +1,1 @@
+{"name":"music","short_name":"music","description":"music","start_url":"/music/","display":"standalone","background_color":"#fafafa","theme_color":"#ffffff","lang":"en","scope":"/music/","orientation":"portrait","icons":[{"src":"favicon.svg","sizes":"192x192 512x512","type":"image/svg+xml","purpose":"any maskable"}]}
