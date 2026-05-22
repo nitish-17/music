@@ -1,34 +1,11 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { useStore } from '../store/useStore';
 import type { ViewType } from '../store/useStore';
-import { GraduationCap, BookOpen, Music4, Download, Layers } from 'lucide-react';
+import { GraduationCap, BookOpen, Music4, Layers } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 export const Sidebar: React.FC = () => {
   const { currentView, setView } = useStore();
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-
-  useEffect(() => {
-    const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    };
-  }, []);
-
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
-      setDeferredPrompt(null);
-    }
-  };
 
   const navItems = [
     {
@@ -38,7 +15,7 @@ export const Sidebar: React.FC = () => {
     },
     {
       id: 'explore' as ViewType,
-      label: 'Explore',
+      label: 'Basics',
       icon: BookOpen,
     },
     {
@@ -74,17 +51,6 @@ export const Sidebar: React.FC = () => {
       </div>
 
       <div className={styles.footer}>
-        {deferredPrompt && (
-          <button
-            className={styles.installBtn}
-            onClick={handleInstallClick}
-            aria-label="Install App"
-            style={{ marginBottom: '16px' }}
-          >
-            <Download className={styles.navIcon} />
-            <span className={styles.navLabel}>Install</span>
-          </button>
-        )}
         <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text-light)' }}>
           v1.0
         </div>
