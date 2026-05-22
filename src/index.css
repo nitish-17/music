@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Color Palette (Clean Light Mode) */
+  --bg-color: hsl(220, 20%, 98%);
+  --panel-bg: hsl(0, 0%, 100%);
+  --panel-bg-hover: hsl(220, 15%, 96%);
+  --primary: hsl(224, 85%, 58%);
+  --primary-light: hsl(224, 85%, 95%);
+  --primary-hover: hsl(224, 75%, 50%);
+  
+  --text-main: hsl(224, 25%, 20%);
+  --text-muted: hsl(224, 12%, 55%);
+  --text-light: hsl(224, 10%, 75%);
+  
+  --success: hsl(142, 60%, 45%);
+  --success-light: hsl(142, 60%, 94%);
+  --danger: hsl(350, 75%, 55%);
+  --danger-light: hsl(350, 75%, 95%);
+  --warning: hsl(38, 92%, 50%);
+  
+  /* Modern soft shadows for flat depth */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
+  --shadow-md: 0 8px 24px -4px rgba(62, 73, 89, 0.06), 0 4px 12px -2px rgba(62, 73, 89, 0.03);
+  --shadow-lg: 0 16px 40px -6px rgba(62, 73, 89, 0.09), 0 8px 20px -4px rgba(62, 73, 89, 0.04);
+  --shadow-ribbon: 4px 0 24px rgba(62, 73, 89, 0.04);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none; /* Globally remove borders */
+  outline: none;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+/* Interactive elements */
+button, select {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+button:active {
+  transform: scale(0.97);
+}

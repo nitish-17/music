@@ -1,0 +1,668 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Educational Card */
+.eduCard {
+  background-color: var(--panel-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.eduHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--panel-bg);
+}
+
+.eduHeader:hover {
+  background-color: var(--panel-bg-hover);
+}
+
+.eduIcon {
+  color: var(--primary);
+}
+
+.eduContent {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid var(--bg-color);
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eduText {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.tableContainer {
+  background-color: var(--bg-color);
+  border-radius: var(--radius-sm);
+  margin-top: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 80px 1.5fr 1fr 1.5fr;
+  padding: 10px 16px;
+  background-color: var(--panel-bg-hover);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--panel-bg);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 80px 1.5fr 1fr 1.5fr;
+  padding: 10px 16px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--panel-bg-hover);
+  align-items: center;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .tableHeader, .tableRow {
+    grid-template-columns: 60px 1.2fr 1fr 1.2fr;
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+}
+
+/* Control Panel */
+.controlPanel {
+  background-color: var(--panel-bg);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.controlTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.rootsGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .rootsGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.rootBtn {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 0;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  user-select: none;
+}
+
+.rootBtn:hover {
+  background-color: var(--panel-bg-hover);
+}
+
+.rootBtnActive {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.rootBtnActive:hover {
+  background-color: var(--primary-hover);
+}
+
+.searchGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 3px var(--primary-light), var(--shadow-sm);
+}
+
+.infoActionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+@media (max-width: 540px) {
+  .infoActionRow {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .infoActionRow .helpText {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.helpText {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.actionBtn {
+  background-color: var(--bg-color);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+}
+
+/* Ragas List & Grid Layouts */
+.ragasListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.chakraGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chakraHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--panel-bg);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  text-align: left;
+}
+
+.chakraHeader:hover {
+  background-color: var(--panel-bg-hover);
+}
+
+.chakraHeaderInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.chakraBadge {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.2px;
+}
+
+.chakraName {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chakraTypeDesc {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.srutiGroupName {
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .chakraHeaderInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+.ragasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+/* Raga Cards */
+.ragaCard {
+  background-color: var(--panel-bg);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--transition-normal);
+}
+
+.ragaCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.ragaCardPlaying {
+  box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.12), 0 4px 12px -2px rgba(37, 99, 235, 0.06);
+}
+
+.ragaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ragaTitleInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.ragaMainTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.westernModes {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.ragaNumberBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: var(--bg-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.ragaName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.stepFormula {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.playBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playBtn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.stopBtn {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.stopBtn:hover {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+/* Swara Sequence Row */
+.swaraSequence {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+}
+
+.swaraNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 2px;
+  background-color: var(--bg-color);
+  border-radius: 6px;
+  gap: 3px;
+}
+
+.swaraNode:hover {
+  background-color: var(--panel-bg-hover);
+  transform: translateY(-1px);
+}
+
+.swaraLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.westernLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.octaveSub {
+  font-size: 8px;
+  color: var(--text-muted);
+  margin-left: 0.5px;
+  vertical-align: sub;
+}
+
+.intervalLabel {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-top: 1px;
+}
+
+/* Active Highlight Node */
+.swaraNodeActive {
+  background-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  animation: pulse 1s infinite alternate;
+}
+
+.swaraNodeActive .swaraLabel,
+.swaraNodeActive .westernLabel,
+.swaraNodeActive .octaveSub,
+.swaraNodeActive .intervalLabel {
+  color: #fff !important;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+/* Flat lists */
+.sectionHeading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.searchResultsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emptyResults {
+  background-color: var(--panel-bg);
+  padding: 40px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--text-muted);
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.segmentControl {
+  position: relative;
+  display: flex;
+  background-color: hsl(222, 15%, 92%);
+  padding: 2px;
+  border-radius: 6px;
+  width: 210px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 480px) {
+  .segmentControl {
+    width: 210px;
+  }
+}
+
+.segmentIndicator {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: calc(50% - 2px);
+  background-color: var(--primary);
+  border-radius: 4px;
+  z-index: 1;
+  transition: transform var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.segmentIndicatorRight {
+  transform: translateX(100%);
+}
+
+.segmentBtn {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  flex: 1;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.segmentBtn:hover {
+  color: var(--text-main);
+}
+
+.segmentBtnActive {
+  color: #ffffff !important;
+}
+
+.rootPitchHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.octaveCheckboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--transition-fast);
+}
+
+.octaveCheckboxLabel:hover {
+  color: var(--text-main);
+}
+
+.octaveSwitch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.octaveSwitch::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background-color: var(--text-light);
+  top: 3px;
+  left: 3px;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.octaveCheckbox {
+  display: none;
+}
+
+.octaveCheckbox:checked + .octaveSwitch {
+  background-color: var(--primary-light);
+}
+
+.octaveCheckbox:checked + .octaveSwitch::after {
+  transform: translateX(18px);
+  background-color: var(--primary);
+}
