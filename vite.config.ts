@@ -4,15 +4,16 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/music/',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'ScaleCraft: Music Scale Trainer',
-        short_name: 'ScaleCraft',
-        description: 'Interactive borderless app to explore and learn music scales and intervals',
+        name: 'music',
+        short_name: 'music',
+        description: 'music',
         theme_color: '#ffffff',
         background_color: '#fafafa',
         display: 'standalone',

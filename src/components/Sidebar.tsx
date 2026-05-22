@@ -43,7 +43,7 @@ export const Sidebar: React.FC = () => {
     },
     {
       id: 'builder' as ViewType,
-      label: 'Interval Builder',
+      label: 'Interval',
       icon: Layers,
     },
     {
